@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { latLng, tileLayer } from 'leaflet';
+import { AddNewMapComponent } from './dialogs/add-new-map/add-new-map.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,10 +18,24 @@ export class DashboardComponent {
     zoom: 3,
     center: latLng(46.879966, -121.726909)
   };
+  dialog = inject(MatDialog);
+  dialogRef: any = null;
   constructor() {}
 
-  toggleMapList() {
+  toggleMapList(): void {
     this.mapListShow = !this.mapListShow;
+  }
+
+  addNewMap(): void {
+    this.dialogRef = this.dialog.open(AddNewMapComponent, {
+      height: '40%',
+      width: '60%'
+    });
+
+    this.dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('The dialog was closed');
+      
+    });
   }
 
 }
