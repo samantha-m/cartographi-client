@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class AddNewMapComponent {
 
   readonly dialogRef = inject(MatDialogRef<AddNewMapComponent>);
-  title = new FormControl('');
-  description = new FormControl('');
+  error: boolean = false;
+  map = new FormGroup({
+    title: new FormControl('', [Validators.required]),
+    description: new FormControl('')
+  })
+
+  onSubmit(): void {
+
+  }
 
 }

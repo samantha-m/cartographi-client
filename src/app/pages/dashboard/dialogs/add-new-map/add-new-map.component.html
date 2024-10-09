@@ -1,22 +1,23 @@
 <h2 mat-dialog-title>Add New Map</h2>
 <mat-dialog-content>
-  <form>
+  <form [formGroup]="map" (ngSubmit)="onSubmit()">
     <div>
         <mat-form-field appearance="outline">
             <mat-label>Title</mat-label>
-            <input matInput />
+            <input matInput formControlName="title" />
+            <mat-error *ngIf="map.get('title')?.hasError('required')">A title is required</mat-error>
         </mat-form-field>
     </div>
     <div>
         <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
-            <textarea matInput></textarea>
-            <mat-hint>0/2500 characters</mat-hint>
+            <textarea maxlength="255" matInput formControlName="description"></textarea>
+            <mat-hint>{{map.get('description')?.value?.length}}/255 characters</mat-hint>
         </mat-form-field>
     </div>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="dialogRef.close()">Cancel</button>
-  <button mat-button cdkFocusInitial>OK</button>
+  <button mat-button cdkFocusInitial type="submit">OK</button>
 </mat-dialog-actions>
