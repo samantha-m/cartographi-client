@@ -1,6 +1,16 @@
 <main id="dashboard-wrapper">
     <div id="map-list" *ngIf="mapListShow">
+        <div id="map-list-header">
+            <div id="map-list-header-title">
+                <span>My Maps</span>
+            </div>
+            <div id="map-list-controls">
+                <button>+</button>
+            </div>
+        </div>
+        <div id="map-list-content">
 
+        </div>
     </div>
     <div id="map-list-toggle">
         <button id="map-list-toggle-btn" (click)="toggleMapList()">
