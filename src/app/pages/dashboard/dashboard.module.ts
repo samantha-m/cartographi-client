@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    LeafletModule
   ],
   exports: [
     DashboardComponent
