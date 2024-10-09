@@ -1,0 +1,25 @@
+#dashboard-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+#map-list {
+    background-color: lightgray;
+    overflow-y: auto;
+    width: 20%;
+}
+
+#map-list-toggle {
+    background-color: gray;
+    padding: 1%;
+    width: 5%;
+}
+
+#map-list-toggle-btn {
+    width: 100%;
+}
+
+#map {
+    width: 75%;
+}

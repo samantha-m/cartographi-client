@@ -1,0 +1,20 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+    height: 10vh;
+}
+
+#title {
+    font-size: 1.5em;
+    margin: 2%;
+}
+
+#content {
+    height: 80vh;
+}
+
+#footer {
+    background-color: gray;
+    height: 10vh;
+}
