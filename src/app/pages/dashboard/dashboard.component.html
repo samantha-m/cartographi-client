@@ -1,9 +1,11 @@
 <main id="dashboard-wrapper">
-    <div id="map-list">
+    <div id="map-list" *ngIf="mapListShow">
 
     </div>
     <div id="map-list-toggle">
-        <button id="map-list-toggle-btn"><i class="fa fa-bars"></i></button>
+        <button id="map-list-toggle-btn" (click)="toggleMapList()">
+            <i class="fa fa-bars"></i>
+        </button>
     </div>
     <div id="map">
 

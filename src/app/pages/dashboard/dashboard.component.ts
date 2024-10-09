@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  mapListShow: boolean = true;
+  constructor() {}
+
+  toggleMapList() {
+    this.mapListShow = !this.mapListShow;
+  }
+
 }
