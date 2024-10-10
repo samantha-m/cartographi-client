@@ -14,7 +14,6 @@ import { MapService } from '../../../../services/map.service';
 export class AddNewMapComponent {
 
   readonly dialogRef = inject(MatDialogRef<AddNewMapComponent>);
-  error: boolean = false;
   map = new FormGroup({
     title: new FormControl('', [Validators.required]),
     description: new FormControl('')

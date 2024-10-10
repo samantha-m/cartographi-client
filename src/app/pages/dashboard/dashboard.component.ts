@@ -4,6 +4,7 @@ import { AddNewMapComponent } from './dialogs/add-new-map/add-new-map.component'
 import { MatDialog } from '@angular/material/dialog';
 import { CartographiMap } from '../../models/map';
 import { MapService } from '../../services/map.service';
+import { ConfirmMapDeleteComponent } from './dialogs/confirm-map-delete/confirm-map-delete.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -41,6 +42,16 @@ export class DashboardComponent implements OnInit {
   toggleMapList(): void {
     this.mapListShow = !this.mapListShow;
     this.resizeMap();
+  }
+
+  deleteMap(map: CartographiMap) {
+    this.dialogRef = this.dialog.open(ConfirmMapDeleteComponent, {
+      height: '30%',
+      width: '80%'
+    });
+    this.dialogRef.afterClosed().subscribe((confirmDelete: boolean) => {
+      console.log(confirmDelete);
+    });
   }
 
   addNewMap(): void {

@@ -19,7 +19,7 @@
         <mat-divider></mat-divider>
         <div id="map-list-content">
             <div id="no-maps" *ngIf="maps.length === 0">
-                <span id="no-maps-content">No maps available. Create a new one?</span>
+                <span class="no-content">No maps available. Create a new one?</span>
             </div>
             <mat-accordion *ngIf="maps.length > 0">
                 <mat-expansion-panel *ngFor="let map of maps">
@@ -27,7 +27,23 @@
                         <mat-panel-title>{{map.title}}</mat-panel-title>
     
                     </mat-expansion-panel-header>
-                    <p>This is the primary content of the panel.</p>
+                    <p id="map-description">{{map.description}}</p>
+                    <mat-divider></mat-divider>
+                    <br />
+                    <div class="no-content" *ngIf="map.locations.length === 0">
+                        <span>No locations available. Create a new one?</span>
+                    </div>
+                    <div id="locations" *ngIf="map.locations.length > 0">
+                        <div id="locations-table-wrapper">
+
+                        </div>
+                    </div>
+                    <br />
+                    <div id="map-content-actions">
+                        <button *ngIf="map.locations.length > 0" class="action-btn"><mat-icon>map</mat-icon></button>
+                        <button class="action-btn"><mat-icon>place</mat-icon>+</button>
+                        <button class="delete-btn" (click)="deleteMap(map)"><mat-icon>delete</mat-icon></button>
+                    </div>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>

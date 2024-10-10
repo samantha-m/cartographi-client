@@ -1,7 +1,24 @@
+.no-content {
+    background-color: #d3d9d4;
+    border-radius: 5px;
+    color: gray;
+    margin: 1%;
+    padding: 5%;
+    text-align: center;
+}
+
 .action-btn {
     border: solid #124E66 1px;
     border-radius: 5px;
     background-color: #124E66;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.delete-btn {
+    border: solid red 1px;
+    border-radius: 5px;
+    background-color: red;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -44,6 +61,24 @@
 #map-list-content {
     padding: 2%;
     overflow-y: scroll;
+}
+
+#map-description {
+    height: 5vh;
+    overflow-y: auto;
+}
+
+#locations {
+    padding: 1%;
+    height: 10vh;
+    overflow-y: auto;
+}
+
+#map-content-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 2%;
 }
 
 #no-maps {

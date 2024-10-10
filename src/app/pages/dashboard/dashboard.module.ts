@@ -17,12 +17,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
+import { ConfirmMapDeleteComponent } from './dialogs/confirm-map-delete/confirm-map-delete.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    AddNewMapComponent
+    AddNewMapComponent,
+    ConfirmMapDeleteComponent
   ],
   imports: [
     FormsModule,
