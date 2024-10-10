@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { latLng, tileLayer } from 'leaflet';
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { latLng, Map, tileLayer } from 'leaflet';
 import { AddNewMapComponent } from './dialogs/add-new-map/add-new-map.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CartographiMap } from '../../models/map';
@@ -12,6 +12,8 @@ import { MapService } from '../../services/map.service';
 })
 export class DashboardComponent implements OnInit {
 
+  @ViewChild("map") mapEl: ElementRef;
+  leaflet: Map;
   maps: CartographiMap[] = [];
   mapListShow: boolean = true;
   mapOptions: any = {
@@ -27,8 +29,18 @@ export class DashboardComponent implements OnInit {
     private mapService: MapService
   ) {}
 
+  resizeMap(): void {
+    if (!this.mapListShow) {
+      this.mapEl.nativeElement.style.setProperty("width", "95%");
+    } else {
+      this.mapEl.nativeElement.style.setProperty("width", "0%");
+    }
+    setTimeout(() => { this.leaflet.invalidateSize(); }, 500);
+  }
+
   toggleMapList(): void {
     this.mapListShow = !this.mapListShow;
+    this.resizeMap();
   }
 
   addNewMap(): void {
@@ -41,8 +53,12 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  refreshDashboard() {
+  refreshDashboard(): void {
     this.maps = this.mapService.getMaps();
+  }
+
+  onMapReady(map: Map): void {
+    this.leaflet = map;
   }
 
   ngOnInit(): void {

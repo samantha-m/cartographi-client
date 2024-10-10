@@ -37,10 +37,12 @@
             <i class="fa fa-bars"></i>
         </button>
     </div>
-    <div id="map">
+    <div id="map" #map>
         <div style="height: 100%;"
             leaflet 
-            [leafletOptions]="mapOptions">
+            [leafletOptions]="mapOptions"
+            (leafletMapReady)="onMapReady($event)"
+            >
         </div>
     </div>
 </main>
