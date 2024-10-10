@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatDialogClose,
     MatIconModule,
     MatExpansionModule,
+    MatDividerModule
   ],
   exports: [
     DashboardComponent

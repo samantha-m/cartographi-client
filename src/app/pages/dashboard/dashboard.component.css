@@ -1,3 +1,11 @@
+.action-btn {
+    border: solid #124E66 1px;
+    border-radius: 5px;
+    background-color: #124E66;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
 #dashboard-wrapper {
     display: flex;
     flex-direction: row;
@@ -7,53 +15,57 @@
 #map-list {
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
-    width: 70%;
+    width: 80%;
 }
 
 #map-list-header {
     display: flex;
     flex-direction: row;
-    border-bottom: solid black 1px;
     padding: 2%;
     height: 5%;
-    width: 100%;
 }
 
 #map-list-header-title {
+    margin: auto;
     width: 75%;
 }
 
 #map-list-controls {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: end;
     width: 25%;
 }
 
 #map-list-search {
     padding: 2%;
-    height: 5%;
-    width: 100%;
 }
-
 
 #map-list-content {
     padding: 2%;
-    height: 90%;
-    overflow-y: auto;
+    overflow-y: scroll;
+}
+
+#no-maps {
+    background-color: #d3d9d4;
+    border-radius: 5px;
+    color: gray;
+    margin: 1%;
+    padding: 5%;
+    text-align: center;
 }
 
 #map-list-toggle {
-    background-color: gray;
+    background-color: #2E3944;
     padding: 1%;
-    width: 5%;
+    width: 20%;
 }
 
 #map-list-toggle-btn {
+    height: 5vh;
     width: 100%;
 }
 
 #map {
-    width: 25%;
+    width: 0%;
 }

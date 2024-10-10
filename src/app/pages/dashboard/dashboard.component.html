@@ -5,19 +5,21 @@
                 <span>My Maps</span>
             </div>
             <div id="map-list-controls">
-                <button (click)="addNewMap()">+</button>
+                <button class="action-btn" (click)="addNewMap()">+</button>
             </div>
         </div>
+        <mat-divider></mat-divider>
         <div id="map-list-search">
             <mat-form-field appearance="outline">
                 <mat-label>Search...</mat-label>
-                <input matInput placeholder="Placeholder" />
+                <input matInput />
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
         </div>
+        <mat-divider></mat-divider>
         <div id="map-list-content">
-            <div *ngIf="maps.length === 0">
-                <span>No maps available. Create a new one?</span>
+            <div id="no-maps" *ngIf="maps.length === 0">
+                <span id="no-maps-content">No maps available. Create a new one?</span>
             </div>
             <mat-accordion *ngIf="maps.length > 0">
                 <mat-expansion-panel *ngFor="let map of maps">
@@ -31,7 +33,7 @@
         </div>
     </div>
     <div id="map-list-toggle">
-        <button id="map-list-toggle-btn" (click)="toggleMapList()">
+        <button id="map-list-toggle-btn" class="action-btn" (click)="toggleMapList()">
             <i class="fa fa-bars"></i>
         </button>
     </div>
