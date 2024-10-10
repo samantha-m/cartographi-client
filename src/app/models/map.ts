@@ -1,4 +1,4 @@
-export class Map {
+export class CartographiMap {
     title: string = "";
     description: string = "";
 
