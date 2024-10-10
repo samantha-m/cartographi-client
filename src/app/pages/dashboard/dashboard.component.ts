@@ -45,8 +45,8 @@ export class DashboardComponent implements OnInit {
 
   addNewMap(): void {
     this.dialogRef = this.dialog.open(AddNewMapComponent, {
-      height: '40%',
-      width: '60%'
+      height: '60%',
+      width: '80%'
     });
     this.dialogRef.afterClosed().subscribe((result: any) => {
       this.refreshDashboard();
