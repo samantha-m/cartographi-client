@@ -14,7 +14,8 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ToastrModule } from 'ngx-toastr';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -35,7 +36,9 @@ import { ToastrModule } from 'ngx-toastr';
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
-    MatDialogClose
+    MatDialogClose,
+    MatIconModule,
+    MatExpansionModule,
   ],
   exports: [
     DashboardComponent
