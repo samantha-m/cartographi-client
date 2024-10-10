@@ -1,15 +1,18 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { latLng, tileLayer } from 'leaflet';
 import { AddNewMapComponent } from './dialogs/add-new-map/add-new-map.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CartographiMap } from '../../models/map';
+import { MapService } from '../../services/map.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
+  maps: CartographiMap[] = [];
   mapListShow: boolean = true;
   mapOptions: any = {
     layers: [
@@ -20,7 +23,9 @@ export class DashboardComponent {
   };
   dialog = inject(MatDialog);
   dialogRef: any = null;
-  constructor() {}
+  constructor(
+    private mapService: MapService
+  ) {}
 
   toggleMapList(): void {
     this.mapListShow = !this.mapListShow;
@@ -31,11 +36,17 @@ export class DashboardComponent {
       height: '40%',
       width: '60%'
     });
-
     this.dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('The dialog was closed');
-      
+      this.refreshDashboard();
     });
+  }
+
+  refreshDashboard() {
+    this.maps = this.mapService.getMaps();
+  }
+
+  ngOnInit(): void {
+    this.refreshDashboard();
   }
 
 }

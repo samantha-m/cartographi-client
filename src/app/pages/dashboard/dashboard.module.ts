@@ -35,8 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
-    MatDialogClose,
-    ToastrModule
+    MatDialogClose
   ],
   exports: [
     DashboardComponent

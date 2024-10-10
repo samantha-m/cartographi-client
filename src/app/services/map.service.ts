@@ -13,4 +13,8 @@ export class MapService {
     this.maps.push(map);
   }
 
+  getMaps(): CartographiMap[] {
+    return this.maps;
+  }
+
 }
